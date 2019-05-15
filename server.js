@@ -11,7 +11,7 @@ app.use(
   )
 );
 
-app.get("/user", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Welcome to chatssapp");
 });
 
@@ -28,4 +28,5 @@ io.on("connection", function(socket) {
     io.emit("server message", JSON.stringify(online));
   });
 });
+
 server.listen(process.env.PORT || 3000, () => console.log("we up."));
