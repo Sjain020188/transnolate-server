@@ -97,7 +97,7 @@ app.post("/register", (req, res, next) => {
     });
 });
 
-app.post("/users", async (req, res) => {
+app.post("https://chat-server-shruti.herokuapp.com/users", async (req, res) => {
   try {
     const user = await db("users").insert(req.body);
 
