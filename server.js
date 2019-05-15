@@ -3,7 +3,7 @@ const morgan = require("morgan");
 
 const http = require("http");
 const socketio = require("socket.io");
-let onlineuser = {};
+let onlineusers = {};
 
 const app = express();
 app.use(
@@ -26,7 +26,10 @@ io.on("connection", function(socket) {
 
   socket.on("new user", function(data) {
     socket.nickname = data;
+    onlineusers[data] = "online";
   });
+
+  io.emit("users", onlineusers);
 
   socket.on("disconnect", function() {
     var online = Object.keys(io.engine.clients);
