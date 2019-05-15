@@ -28,4 +28,4 @@ io.on("connection", function(socket) {
     io.emit("server message", JSON.stringify(online));
   });
 });
-server.listen(3000, () => console.log("we up."));
+server.listen(process.env.PORT || 3000, () => console.log("we up."));
