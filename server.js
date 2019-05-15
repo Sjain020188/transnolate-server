@@ -27,10 +27,17 @@ io.on("connection", function(socket) {
   socket.on("new user", function(data) {
     socket.nickname = data;
     onlineusers[data] = "online";
-    io.emit("users", onlineusers);
+    let final = [];
+    for (let a in onlineusers) {
+      if (onlineusers[a] === "online") {
+        final.push(a);
+      }
+    }
+    io.emit("users", final);
   });
 
-  socket.on("disconnect", function() {
+  socket.on("disconnect", function(data) {
+    onlineusers[socket.nickname] = "offline";
     var online = Object.keys(io.engine.clients);
     io.emit("server message", JSON.stringify(online));
   });
