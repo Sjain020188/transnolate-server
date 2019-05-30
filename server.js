@@ -39,7 +39,7 @@ app.get("/reviews/:username", async (req, res) => {
 });
 
 app.post("/signup", async (req, res) => {
-  const user = await db("user_review").insert(req.body);
+  const user = await db("users").insert(req.body);
   res.send("Added");
 });
 //socket io fro checking online users
