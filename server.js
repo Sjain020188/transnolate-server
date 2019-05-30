@@ -37,6 +37,11 @@ app.get("/reviews/:username", async (req, res) => {
     .where({ username: req.params.username });
   res.send(user);
 });
+
+app.post("/signup", async (req, res) => {
+  const user = await db("user_review").insert(req.body);
+  res.send("Added");
+});
 //socket io fro checking online users
 
 const getUserNameByEmail = async email => {
