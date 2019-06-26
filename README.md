@@ -16,7 +16,5 @@ yarn install
 yarn start
 ```
 
-## Endpoints
-
 ## Acknowledgement
 [Code Chrysalis](https://www.codechrysalis.io/)
