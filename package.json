@@ -10,7 +10,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "http": "^0.0.0",
-    "knex": "^0.16.5",
+    "knex": "^0.19.5",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
